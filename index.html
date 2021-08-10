@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+   
+	<meta charset="utf-8">
+         <link rel="icon" type="image/png"
+    href="https://mostaql.hsoubcdn.com/uploads/49844-1492808946-512.jpg" />
+	<title> X-O game by java script </title>
+<style>
+    .wr{
+        width: 500px;
+        height: 500px;
+        margin: 44px auto;
+
+    }
+    .sqr{ 
+        width: 140px;
+        height: 140px;
+        margin: 5px;
+        font-size: 118px;
+        color: black;
+        background-color:cornflowerblue;
+        text-align: center;
+        float: left;
+        cursor: pointer;
+        font-family:sans-serif;
+         text-shadow:  2px 2px;
+      /* padding-bottom: 2px; */
+    }
+        .ab{
+    margin-right: 69px;
+  font-size: 20px;
+     line-height: 1px;
+    }
+</style>
+    </head>
+    <body>
+        <div class="ab">
+        <h1> <center> This game made by :<h5> Abaoub Edwar </h5>  </center></h1>
+        </div>
+        
+        <div class="wr">
+          <div class="sqr" id="a1" onclick="insert(this.id)"></div>
+          <div class="sqr" id="a2" onclick="insert(this.id)"></div>
+          <div class="sqr" id="a3" onclick="insert(this.id)"></div>
+          <div class="sqr" id="a4" onclick="insert(this.id)"></div>
+          <div class="sqr" id="a5" onclick="insert(this.id)"></div>
+          <div class="sqr" id="a6" onclick="insert(this.id)"></div>
+          <div class="sqr" id="a7" onclick="insert(this.id)"></div>
+          <div class="sqr" id="a8" onclick="insert(this.id)"></div>
+          <div class="sqr" id="a9" onclick="insert(this.id)"></div>
+        
+        </div>
+    
+        <script>
+var turn = true; // this meen x
+var squars =[];
+function checkwinner(){
+    for( var i=1  ; i<=9; i++ ){
+  squars[i]= document.getElementById('a'+i).innerHTML;
+}
+    //  (الحكم او الشروط للفوز بالعبه  (انهم يكونو جمب بعض افقي  
+    if(squars[1]==squars[2] && squars[2]==squars[3] && squars[3]!=""){
+       alert( 'player ' + squars[3] + ' win the game')
+       }
+    if(squars[4]==squars[5] && squars[5]==squars[6] && squars[6]!=""){
+       alert( 'player ' + squars[4] + ' win the game')
+       }
+    if(squars[7]==squars[8] && squars[8]==squars[9] && squars[9]!=""){
+       alert( 'player ' + squars[7] + ' win the game')
+       }
+       //  (  الحكم او الشروط للفوز بالعبه   ( (رأسي)  انهم يكونو جمب بعض 
+    if(squars[1]==squars[4] && squars[4]==squars[7] && squars[7]!=""){
+       alert( 'player ' + squars[1] + ' win the game')
+       }
+    if(squars[2]==squars[5] && squars[5]==squars[8] && squars[8]!=""){
+       alert( 'player ' + squars[2] + ' win the game')
+       }
+    if(squars[3]==squars[6] && squars[6]==squars[9] && squars[9]!=""){
+       alert( 'player ' + squars[9] + ' win the game')
+       }
+    // (الحكم او الشرط بالفوز (المقص 
+        
+    if(squars[1]==squars[5] && squars[5]==squars[9] && squars[9]!=""){
+       alert( 'player ' + squars[5] + '  win the game')
+       }
+    if(squars[3]==squars[5] && squars[5]==squars[7] && squars[7]!=""){
+       alert( 'player ' + squars[3] +  ' win the game')
+       }
+    
+    
+    
+    }
+function insert(id){
+var U = document.getElementById(id);
+if(turn && U.innerHTML==""){
+    U.innerHTML="x"
+    turn = !turn;
+}else if (!turn && U.innerHTML=="" ){
+    U.innerHTML="o"
+    turn = !turn; 
+}
+    checkwinner(); 
+};
+
+        </script>
+    <script src="xogame.js">
+        
+        </script>
+    </body>
+</html>
